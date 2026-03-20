@@ -10,14 +10,12 @@
             --primary-bg: linear-gradient(135deg, #020617 0%, #0f172a 100%);
             --accent-blue: #38bdf8;
             --card-bg: rgba(255, 255, 255, 0.03);
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--primary-bg);
-            color: var(--text-main);
+            color: #f8fafc;
             margin: 0;
             padding: 20px;
             min-height: 100vh;
@@ -28,7 +26,7 @@
 
         .container {
             width: 100%;
-            max-width: 750px;
+            max-width: 800px;
             background: var(--card-bg);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -36,159 +34,57 @@
             border-radius: 24px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
             text-align: center;
-            margin-top: 20px;
         }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.2;
-        }
-
-        h3 {
-            font-weight: 300;
-            font-size: 1.1rem;
-            margin-bottom: 35px;
-            color: var(--text-dim);
-        }
-
-        .input-group {
-            text-align: left;
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #cbd5e1;
-        }
+        h1 { font-size: 2.2rem; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 5px; }
+        h3 { font-weight: 300; color: #94a3b8; margin-bottom: 30px; }
 
         input {
-            width: 100%;
-            padding: 14px;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid #334155;
-            border-radius: 10px;
-            color: white;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        input:focus {
-            border-color: var(--accent-blue);
-            outline: none;
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
-            background: rgba(15, 23, 42, 1);
-        }
-
-        .example-box {
-            background: rgba(56, 189, 248, 0.1);
-            border-radius: 8px;
-            padding: 12px;
-            margin-top: 8px;
-            font-size: 0.75rem;
-            color: #7dd3fc;
-            word-break: break-all;
-            border: 1px dashed rgba(56, 189, 248, 0.3);
-        }
-
-        .row {
-            display: flex;
-            gap: 20px;
-        }
-
-        .row .input-group {
-            flex: 1;
+            width: 100%; padding: 14px; margin: 10px 0;
+            background: rgba(15, 23, 42, 0.8); border: 1px solid #334155;
+            border-radius: 10px; color: white; box-sizing: border-box;
         }
 
         button {
-            width: 100%;
-            padding: 16px;
-            background: var(--accent-blue);
-            color: #020617;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
+            width: 100%; padding: 16px; background: var(--accent-blue);
+            color: #020617; border: none; border-radius: 10px;
+            font-weight: 600; cursor: pointer; margin-top: 15px; transition: 0.3s;
         }
 
-        button:hover {
-            background: #7dd3fc;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.4);
+        button:hover { background: #7dd3fc; transform: translateY(-2px); }
+
+        /* Table Styling for Merged View */
+        .result-table {
+            width: 100%; border-collapse: collapse; margin-top: 30px;
+            background: rgba(255, 255, 255, 0.02); border-radius: 10px; overflow: hidden;
         }
 
-        #downloadAllBtn {
-            background: #f59e0b;
-            margin-top: 15px;
-            display: none;
+        .result-table th, .result-table td {
+            padding: 15px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .results-section {
-            margin-top: 40px;
-            text-align: left;
-        }
+        .result-table th { background: rgba(56, 189, 248, 0.1); color: var(--accent-blue); }
 
-        .result-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px 25px;
-            margin-bottom: 12px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 5px solid var(--accent-blue);
-            transition: 0.3s;
-        }
-
-        .result-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .result-card a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+        a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
 
         footer {
-            margin-top: 50px;
-            max-width: 750px;
-            text-align: center;
-            font-size: 0.85rem;
-            line-height: 1.8;
-            color: var(--text-dim);
-            padding: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px; text-align: center; color: #94a3b8; font-size: 0.85rem;
+            max-width: 700px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;
         }
-
-        footer b { color: #fff; font-weight: 600; }
 
         .linkedin-badge {
-            display: inline-block;
-            margin-top: 15px;
-            background: #0077b5;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
+            display: inline-block; margin-top: 15px; background: #0077b5;
+            color: white; padding: 8px 20px; border-radius: 25px; text-decoration: none;
         }
 
-        .linkedin-badge:hover {
-            background: #00a0dc;
-            transform: scale(1.05);
+        /* Print Optimization */
+        @media print {
+            body { background: white; color: black; }
+            .container, footer, input, button { box-shadow: none; border: none; background: none; }
+            .linkedin-badge, .example-box { display: none; }
+            h1, h3 { color: black; }
+            .result-table th { background: #eee; color: black; border: 1px solid #ccc; }
+            .result-table td { border: 1px solid #ccc; }
         }
     </style>
 </head>
@@ -198,84 +94,61 @@
         <h1>Bihar Engineering University, Patna</h1>
         <h3>Bulk Result For Any Semester</h3>
 
-        <div class="input-group">
-            <label>Paste Sample Result URL</label>
-            <input type="text" id="urlInput" placeholder="Enter Result URL of any student from BEU website...">
-            <div class="example-box">
-                <b>Example URL:</b> https://beu-bih.ac.in/result-three?name=B.Tech.%204th%20Semester%20Examination,%202025&semester=IV&session=2025&regNo=23153125001&exam_held=December%2F2025
+        <div style="text-align: left;">
+            <label>Sample URL</label>
+            <input type="text" id="urlInput" placeholder="Paste BEU Result URL here...">
+            <div style="font-size: 0.7rem; color: #64748b; margin-bottom: 15px;">
+                Ex: https://beu-bih.ac.in/result-three?name=...&regNo=23153125001&...
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+                <input type="number" id="startReg" placeholder="Start Reg No" value="23153125001">
+                <input type="number" id="endReg" placeholder="End Reg No" value="23153125010">
             </div>
         </div>
 
-        <div class="row">
-            <div class="input-group">
-                <label>Start Registration No</label>
-                <input type="number" id="startReg" value="23102125XX">
-            </div>
-            <div class="input-group">
-                <label>End Registration No</label>
-                <input type="number" id="endReg" value="23102125XX">
-            </div>
-        </div>
+        <button onclick="generateTable()">Generate Merged Report</button>
+        <button onclick="window.print()" id="printBtn" style="display:none; background: #f59e0b;">📥 Save All as Single PDF (Print)</button>
 
-        <button onclick="generateResults()">Generate Bulk Links</button>
-        <button id="downloadAllBtn" onclick="openAllLinks()">📥 Open All Tabs (Save as PDF)</button>
-
-        <div id="resultsWrapper" class="results-section"></div>
+        <table id="resultTable" class="result-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Registration No</th>
+                    <th>Result Link (Click to Verify)</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
     </div>
 
     <footer>
         This Bulk Result Downloader is designed and developed by <b>Krishna Raj</b>, 
         a student of <b>Rashtrakavi Ramdhari Singh Dinkar College of Engineering, Batch 2023</b>, 
-        from the <b>Mechanical Engineering Department</b>. <br><br>
-        This tool is created with the purpose of result prediction for students. 
-        In the future, major updates and improvements will be introduced in this tool 
-        to enhance accuracy and user experience. <br>
-        <a href="https://www.linkedin.com/in/krishna-raj-🇮🇳-528108310" class="linkedin-badge" target="_blank">Connect with me on LinkedIn</a>
+        from the <b>Mechanical Engineering Department</b>.<br>
+        <a href="https://www.linkedin.com/in/krishna-raj-%F0%9F%87%AE%F0%9F%87%B3-528108310" class="linkedin-badge" target="_blank">Connect with me on LinkedIn</a>
     </footer>
 
     <script>
-        function generateResults() {
+        function generateTable() {
             const rawUrl = document.getElementById('urlInput').value;
             const start = parseInt(document.getElementById('startReg').value);
             const end = parseInt(document.getElementById('endReg').value);
-            const wrapper = document.getElementById('resultsWrapper');
-            const dlBtn = document.getElementById('downloadAllBtn');
+            const table = document.getElementById('resultTable');
+            const tbody = document.getElementById('tableBody');
+            const printBtn = document.getElementById('printBtn');
 
             if(!rawUrl || isNaN(start) || isNaN(end)) {
-                alert("Please fill all details correctly!");
-                return;
+                alert("Please fill all details!"); return;
             }
 
-            wrapper.innerHTML = "<h4 style='color: #38bdf8; margin-bottom: 20px;'>Generated Results:</h4>";
-            dlBtn.style.display = "block";
-
+            tbody.innerHTML = "";
             for (let i = start; i <= end; i++) {
-                // Logic to replace regNo value in URL
-                const updatedUrl = rawUrl.replace(/(regNo=)(\d+)/, "$1" + i);
-                
-                const card = document.createElement('div');
-                card.className = 'result-card';
-                card.innerHTML = `
-                    <span>Reg No: <b>${i}</b></span>
-                    <a href="${updatedUrl}" target="_blank" class="res-link">View Result →</a>
-                `;
-                wrapper.appendChild(card);
-            }
-        }
-
-        function openAllLinks() {
-            const links = document.querySelectorAll('.res-link');
-            const count = links.length;
-            
-            if(count > 15) {
-                if(!confirm(`You are about to open ${count} tabs. This might slow down your browser. Continue?`)) return;
+                const newUrl = rawUrl.replace(/(regNo=)(\d+)/, "$1" + i);
+                tbody.innerHTML += `<tr><td><b>${i}</b></td><td><a href="${newUrl}" target="_blank">Open Result Marksheet</a></td></tr>`;
             }
 
-            links.forEach((btn, index) => {
-                setTimeout(() => {
-                    window.open(btn.href, '_blank');
-                }, index * 600); // 0.6 second delay between tabs
-            });
+            table.style.display = "table";
+            printBtn.style.display = "block";
         }
     </script>
 </body>
